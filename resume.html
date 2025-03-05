@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    /* Resume Styles */
+.resume-main {
+    padding: 8rem 2rem 4rem;
+    background: #f8f9fa;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.resume-header h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.resume-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resume-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+    color: #007bff;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    border-left: 2px solid #007bff;
+    padding-left: 2rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background: #007bff;
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-place {
+    color: #007bff;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.experience-list {
+    padding-left: 1.5rem;
+}
+
+.experience-list li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.skill-bar {
+    background: #f0f0f0;
+    height: 2rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background: #007bff;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    transition: width 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+}
+</style>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('resume') }}">Resume</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="resume-main">
+        <section class="resume-header">
+            <h1>My Resume</h1>
+            <p>Full-Stack Developer | Problem Solver | Tech Enthusiast</p>
+        </section>
+
+        <div class="resume-container">
+            <section class="resume-section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Bachelor in Computer Engineering</h3>
+                        <p class="timeline-place">Tribhuvan University</p>
+                        <p class="timeline-date">2019 - 2023</p>
+                        <p>Specialized in software development and computer systems.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>High School</h3>
+                        <p class="timeline-place">Trinity International College</p>
+                        <p class="timeline-date">2017 - 2019</p>
+                        <p>Science with Computer Science major.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Full Stack Developer</h3>
+                        <p class="timeline-place">Tech Company</p>
+                        <p class="timeline-date">2022 - Present</p>
+                        <ul class="experience-list">
+                            <li>Developed and maintained web applications using React and Node.js</li>
+                            <li>Implemented responsive design principles</li>
+                            <li>Collaborated with cross-functional teams</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Web Development Intern</h3>
+                        <p class="timeline-place">StartUp Hub</p>
+                        <p class="timeline-date">2021 - 2022</p>
+                        <ul class="experience-list">
+                            <li>Assisted in frontend development using HTML, CSS, and JavaScript</li>
+                            <li>Participated in code reviews and team meetings</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;">HTML/CSS</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;">JavaScript</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;">React</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;">Python</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;">Node.js</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;">SQL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Me</h3>
+                <p>Passionate developer creating innovative solutions and bringing ideas to life through code.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: satyam1sapkota@gmail.com</p>
+                <p>Phone: +977 9742870682</p>
+                <p>Location: Bhaktapur, Nepal</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Satyam Sapkota. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

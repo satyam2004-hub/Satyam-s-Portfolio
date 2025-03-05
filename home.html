@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/logo0.png') }}" alt="Portfolio Logo">
+                </a>
+            </div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('resume') }}">Resume</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="hero">
+            <div class="profile-image">
+                <img src="{{ url_for('static', filename='Images/img1.png') }}" alt="Profile Picture">
+            </div>
+            <h1>Welcome to My Portfolio</h1>
+            <p class="tagline">Full-Stack Developer | Problem Solver | Tech Enthusiast</p>
+        </section>
+
+        <section class="featured-projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Project 1">
+                    <div class="project-card-content">
+                        <h3>Word Press</h3>
+                        <p>A detailed description of your first project. Explain the technologies used and the problems solved.</p>
+                        <div class="project-links">
+                            <a href="#" class="live-demo">Live Demo</a>
+                            <a href="#" class="source-code">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/logo5.jpg') }}" alt="Project 2">
+                    <div class="project-card-content">
+                        <h3>Cisco Networking</h3>
+                        <p>A detailed description of your second project. Highlight the key features and your role.</p>
+                        <div class="project-links">
+                            <a href="#" class="live-demo">Live Demo</a>
+                            <a href="#" class="source-code">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/logo6.jpeg') }}" alt="Project 3">
+                    <div class="project-card-content">
+                        <h3>Iot Robotics</h3>
+                        <p>A detailed description of your third project. Mention the impact and results achieved.</p>
+                        <div class="project-links">
+                            <a href="#" class="live-demo">Live Demo</a>
+                            <a href="#" class="source-code">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-overview">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="{{ url_for('static', filename='images/web.jpg') }}" alt="Web Development">
+                    <h3>Web Development</h3>
+                </div>
+                <div class="skill-item">
+                    <img src="{{ url_for('static', filename='images/mobile.jpg') }}" alt="Mobile Development">
+                    <h3>Mobile Development</h3>
+                </div>
+                <div class="skill-item">
+                    <img src="{{ url_for('static', filename='images/data.jpg') }}" alt="Database">
+                    <h3>Database Management</h3>
+                </div>
+            </div>
+        </section>
+
+                <!-- ... previous code ... -->
+                <div class="testimonial-container">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-slide">
+                            <img src="static/images/a (2).jpg" alt="User Image">
+                            <p class="testimonial-text">"This service exceeded my expectations! The team was professional and the results were outstanding. Highly recommend!"</p>
+                            <p class="testimonial-author">- Aditi Bhattarai</p>
+                        </div>
+        
+                        <div class="testimonial-slide">
+                            <img src="static/images/n.jpg" alt="User Image">
+                            <p class="testimonial-text">"Working with Satyam was a great experience. His technical skills and problem-solving abilities are impressive!"</p>
+                            <p class="testimonial-author">- Nimesh Dhakal</p>
+                        </div>
+        
+                        <div class="testimonial-slide">
+                            <img src="static/images/b.jpg" alt="User Image">
+                            <p class="testimonial-text">"Excellent work ethic and delivers projects on time. Would definitely recommend for any tech project!"</p>
+                            <p class="testimonial-author">- Bibas Pokhrel</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots"></div>
+                </div>
+                
+
+    </main>
+    <!-- Add this before the footer -->
+    <section class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Bhaktapur, Nepal</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>satyam1sapkota@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+977 9742870682</p>
+                </div>
+            </div>
+            <form class="contact-form" action="/submit" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Me</h3>
+                <p>Passionate developer creating innovative solutions and bringing ideas to life through code.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: satyam1sapkota@gmail.com</p>
+                <p>Phone: +977 9742870682</p>
+                <p>Location: Bhaktapur, Nepal</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Satyam Sapkota. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
